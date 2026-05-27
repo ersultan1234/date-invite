@@ -4,15 +4,7 @@ document.getElementById("noBtn");
 const buttons =
 document.querySelector(".buttons");
 
-/* СТАРТОВАЯ ПОЗИЦИЯ */
-
-let currentX = 220;
-let currentY = 20;
-
-noBtn.style.left = currentX + "px";
-noBtn.style.top = currentY + "px";
-
-/* УБЕГАНИЕ ОТ КУРСОРА */
+/* КНОПКА УБЕГАЕТ */
 
 buttons.addEventListener(
 "mousemove",
@@ -27,26 +19,16 @@ buttons.addEventListener(
     const btnCenterY =
     rect.top + rect.height / 2;
 
-    const distanceX =
-    e.clientX - btnCenterX;
-
-    const distanceY =
-    e.clientY - btnCenterY;
-
     const distance =
-    Math.sqrt(
-        distanceX * distanceX +
-        distanceY * distanceY
+    Math.hypot(
+
+        e.clientX - btnCenterX,
+
+        e.clientY - btnCenterY
+
     );
 
-    /* ЕСЛИ КУРСОР БЛИЗКО */
-
-    if(distance < 120){
-
-        currentX -= distanceX * 0.25;
-        currentY -= distanceY * 0.25;
-
-        /* ОГРАНИЧЕНИЯ */
+    if(distance < 100){
 
         const area =
         buttons.getBoundingClientRect();
@@ -57,23 +39,17 @@ buttons.addEventListener(
         const maxY =
         area.height - rect.height;
 
-        currentX =
-        Math.max(
-            0,
-            Math.min(currentX,maxX)
-        );
+        const randomX =
+        Math.random() * maxX;
 
-        currentY =
-        Math.max(
-            0,
-            Math.min(currentY,maxY)
-        );
+        const randomY =
+        Math.random() * maxY;
 
         noBtn.style.left =
-        currentX + "px";
+        randomX + "px";
 
         noBtn.style.top =
-        currentY + "px";
+        randomY + "px";
 
     }
 
@@ -122,12 +98,14 @@ cards.forEach(card=>{
 
 });
 
-/* ФИНАЛ */
+/* TELEGRAM */
 
 function finishDate(){
 
     const selected =
-    document.querySelector(".selected h3");
+    document.querySelector(
+    ".selected h3"
+    );
 
     const date =
     document.querySelector(
