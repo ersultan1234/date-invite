@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+    <title>For You 💖</title>
+
+    <link rel="stylesheet"
+    href="style.css">
+
+</head>
+<body>
+
+<div class="background"></div>
+
+<div class="particles"></div>
+
+<!-- ПЕРВАЯ СТРАНИЦА -->
+
+<div class="container"
+id="page1">
+
+    <div class="top-glow"></div>
+
+    <h1 class="title">
+        Жаным
+    </h1>
+
+    <h1 class="title">
+        Пойдешь со мной
+        <br>
+        на свидание? 💖
+    </h1>
+
+    <p class="subtitle">
+
+        Я обещаю атмосферу,
+        вкусную еду,
+        много смеха
+        и лучшие воспоминания ✨
+
+    </p>
+
+    <div class="buttons">
+
+        <button
+        class="yes-btn"
+        onclick="nextPage()">
+
+            Да 💖
+
+        </button>
+
+        <button
+        class="no-btn"
+        id="noBtn">
+
+            Нет 😢
+
+        </button>
+
+    </div>
+
+</div>
+
+<!-- ВТОРАЯ СТРАНИЦА -->
+
+<div class="container hidden"
+id="page2">
+
+    <div class="top-glow"></div>
+
+    <h1 class="title">
+        Тогда выбирай ✨
+    </h1>
+
+    <p class="subtitle">
+
+        Какое свидание тебе нравится?
+
+    </p>
+
+    <div class="cards">
+
+        <div class="card selectable">
+
+            <div class="emoji">🍣</div>
+
+            <h3>Суши с леткой!</h3>
+
+            <p>Вкусно и уютно</p>
+
+        </div>
+
+        <div class="card selectable">
+
+            <div class="emoji">☕</div>
+
+            <h3>Кофе и разговоры</h3>
+
+            <p> Активнаяпрогулка вечером с любимым человеком</p>
+
+        </div>
+
+        <div class="card selectable">
+
+            <div class="emoji">🌌</div>
+
+            <h3>Новое заведение</h3>
+
+            <p>Новое меню новое место новая встреча</p>
+
+        </div>
+
+        <div class="card selectable">
+
+            <div class="emoji">🎬</div>
+
+            <h3>Кино и страстная любовь</h3>
+
+            <p>Романтичная атмосфера</p>
+
+        </div>
+
+    </div>
+
+    <input
+    type="date"
+    class="input">
+
+    <input
+    type="time"
+    class="input">
+
+    <textarea
+    class="textarea"
+    placeholder="Напиши свои пожелания ✨"></textarea>
+
+    <button
+    class="finish-btn"
+    onclick="finishDate()">
+
+        Подтвердить 💌
+
+    </button>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
