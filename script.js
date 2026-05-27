@@ -1,57 +1,26 @@
 const noBtn =
 document.getElementById("noBtn");
 
-const buttons =
-document.querySelector(".buttons");
+/* УБЕГАЮЩАЯ КНОПКА */
 
-/* КНОПКА УБЕГАЕТ */
+noBtn.addEventListener(
+"mouseenter",
+()=>{
 
-buttons.addEventListener(
-"mousemove",
-(e)=>{
+    const maxX = 300;
+    const maxY = 60;
 
-    const rect =
-    noBtn.getBoundingClientRect();
+    const randomX =
+    Math.random() * maxX - 150;
 
-    const btnCenterX =
-    rect.left + rect.width / 2;
+    const randomY =
+    Math.random() * maxY;
 
-    const btnCenterY =
-    rect.top + rect.height / 2;
+    noBtn.style.left =
+    `calc(50% + ${randomX}px)`;
 
-    const distance =
-    Math.hypot(
-
-        e.clientX - btnCenterX,
-
-        e.clientY - btnCenterY
-
-    );
-
-    if(distance < 100){
-
-        const area =
-        buttons.getBoundingClientRect();
-
-        const maxX =
-        area.width - rect.width;
-
-        const maxY =
-        area.height - rect.height;
-
-        const randomX =
-        Math.random() * maxX;
-
-        const randomY =
-        Math.random() * maxY;
-
-        noBtn.style.left =
-        randomX + "px";
-
-        noBtn.style.top =
-        randomY + "px";
-
-    }
+    noBtn.style.top =
+    `${randomY}px`;
 
 });
 
@@ -69,7 +38,7 @@ function nextPage(){
 
 }
 
-/* КАРТОЧКИ */
+/* ВЫБОР КАРТОЧЕК */
 
 const cards =
 document.querySelectorAll(
@@ -142,12 +111,9 @@ ${wishes}
 
 `;
 
-    const token = 8819138919:AAGY-kG-u29pHcaPn3TEml-5wPxYNB8SMXQ
-    "ТВОЙ_TOKEN";
-
-    const chatId = 6145113362
-    "ТВОЙ_CHAT_ID";
-
+    const token = "8819138919:AAGY-kG-u29pHcaPn3TEml-5wPxYNB8SMXQ";
+    
+    const chatId = "6145113362";
     fetch(
 
     `https://api.telegram.org/bot${token}/sendMessage`,
@@ -201,7 +167,7 @@ ${wishes}
 
 }
 
-/* СЕРДЕЧКИ */
+/* СЕРДЦА */
 
 for(let i=0;i<40;i++){
 
