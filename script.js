@@ -126,31 +126,100 @@ cards.forEach(card=>{
 
 function finishDate(){
 
-    document.body.innerHTML = `
+    const selected =
+    document.querySelector(".selected h3");
 
-    <div class="background"></div>
+    const date =
+    document.querySelector(
+    'input[type="date"]'
+    ).value;
 
-    <div class="particles"></div>
+    const time =
+    document.querySelector(
+    'input[type="time"]'
+    ).value;
 
-    <div class="container">
+    const wishes =
+    document.querySelector(
+    ".textarea"
+    ).value;
 
-        <div class="top-glow"></div>
+    const message = `
 
-        <h1 class="title">
-            Спасибо 💖
-        </h1>
+💖 Новое свидание!
 
-        <p class="subtitle">
+🍽 Выбор:
+${selected
+? selected.innerText
+: "Не выбрано"}
 
-            Я уже жду нашу встречу ✨
-            <br><br>
-            Это будет особенный день ❤️
+📅 Дата:
+${date}
 
-        </p>
+⏰ Время:
+${time}
 
-    </div>
+✨ Пожелания:
+${wishes}
 
-    `;
+`;
+
+    const token = 8819138919:AAGY-kG-u29pHcaPn3TEml-5wPxYNB8SMXQ
+    "ТВОЙ_TOKEN";
+
+    const chatId = 6145113362
+    "ТВОЙ_CHAT_ID";
+
+    fetch(
+
+    `https://api.telegram.org/bot${token}/sendMessage`,
+
+    {
+
+        method:"POST",
+
+        headers:{
+            "Content-Type":
+            "application/json"
+        },
+
+        body:JSON.stringify({
+
+            chat_id:chatId,
+
+            text:message
+
+        })
+
+    })
+
+    .then(()=>{
+
+        document.body.innerHTML = `
+
+        <div class="background"></div>
+
+        <div class="particles"></div>
+
+        <div class="container">
+
+            <div class="top-glow"></div>
+
+            <h1 class="title">
+                Спасибо 💖
+            </h1>
+
+            <p class="subtitle">
+
+                Я уже жду нашу встречу ✨
+
+            </p>
+
+        </div>
+
+        `;
+
+    });
 
 }
 
