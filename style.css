@@ -303,10 +303,6 @@ button{
 
 .yes-btn:hover{
 
-    transform:
-    translateY(-3px)
-    scale(1.03);
-
     box-shadow:
     0 15px 35px
     rgba(255,79,139,0.6);
