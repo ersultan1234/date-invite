@@ -264,9 +264,9 @@ button{
 
     position:absolute;
 
-    left:50%;
+    left:35%;
 
-    transform:translateX(-120px);
+    top:0;
 
     background:
     linear-gradient(
@@ -282,6 +282,16 @@ button{
     rgba(255,79,139,0.4);
 
     z-index:5;
+
+    transition:0.3s;
+}
+
+.yes-btn:hover{
+
+    box-shadow:
+    0 15px 35px
+    rgba(255,79,139,0.6);
+
 }
 
 .yes-btn:hover{
@@ -306,11 +316,9 @@ button{
 
     position:absolute;
 
-    left:50%;
+    left:60%;
 
     top:0;
-
-    transform:translateX(20px);
 
     background:
     rgba(255,255,255,0.08);
